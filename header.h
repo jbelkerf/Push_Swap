@@ -8,4 +8,5 @@ typedef struct a_stack
 }  t_stack;
 #include <unistd.h>
 #include <stdlib.h>
+#include "libft/libft.h"
 #endif
