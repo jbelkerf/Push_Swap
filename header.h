@@ -7,6 +7,7 @@ typedef struct a_stack
     struct a_stack *next;
 }  t_stack;
 #include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "libft/libft.h"
 #endif
