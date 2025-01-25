@@ -10,4 +10,7 @@ typedef struct a_stack
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft/libft.h"
+
+void error(void);
+void sa(t_stack **a);
 #endif

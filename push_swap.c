@@ -126,6 +126,7 @@ int main(int argc, char **argv)
 	if (argc == 1)
 		error();
 	stacka = parce_and_fill(argc, argv);
+	sa_or_b(&stacka);
 	while (stacka)
 	{
 		printf("%d\n", stacka->value);

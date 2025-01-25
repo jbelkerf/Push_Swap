@@ -2,7 +2,7 @@ NAME=push_swap
 CC=cc 
 libft=./libft/libft.a
 CFLAGS= -Wall -Wextra -Werror
-M_SRC= push_swap.c 
+M_SRC= push_swap.c operations.c
 M_OBJ=$(M_SRC:.c=.o)
 
 all: $(M_OBJ)
@@ -13,6 +13,7 @@ all: $(M_OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	$(MAKE) clean -C ./libft
+	rm -f $(M_OBJ) $(NAME)
 
 
 	##-g -fsanitize=address 
