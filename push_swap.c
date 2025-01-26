@@ -22,7 +22,9 @@ int main(int argc, char **argv)
 	stacka = parce_and_fill(argc, argv);
 	sa_and_b(&stackb, &stacka, 1);
 	push_stack(&stacka, &stackb, 1, 1);
-	
+	push_stack(&stacka, &stackb, 1, 1);
+
+	ft_printf("a--->\n");
 	while (stacka)
 	{
 		printf("%d\n", stacka->value);
@@ -30,6 +32,7 @@ int main(int argc, char **argv)
 		stacka = stacka->next;
 		free(tmp);
 	}
+	ft_printf("b--->\n");
 	while (stackb)
 	{
 		printf("%d\n", stackb->value);

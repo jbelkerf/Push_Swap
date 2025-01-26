@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 19:05:45 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/26 19:32:32 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/26 20:08:15 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void push_stack(t_stack **wahd, t_stack **joj, int option, int pattern)
 {
 	t_stack *tmp;
+	t_stack *tmp_next;
 
 	if (option)
 	{
@@ -26,7 +27,8 @@ void push_stack(t_stack **wahd, t_stack **joj, int option, int pattern)
 	if (*wahd)
 	{
 		tmp = *wahd;
+		tmp_next = (*wahd)->next;
 		ft_lstadd_front(joj, tmp);
-		*wahd= (*wahd)->next;
+		*wahd= tmp_next;
 	}
 }
