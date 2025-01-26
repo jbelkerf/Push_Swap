@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:43 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 13:31:45 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:14 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/11/01 13:38:18 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
 /*
- * the lstnew take a void content and put it in a new node and return thr node
+ * the lstdelone take a node and a del func used to delete the content and then
+ * free the node
  */
-t_stack	*ft_lstnew(int value)
+void	ft_lstdelone(t_stack *lst, void (*del)(void *))
 {
-	t_stack	*new;
-
-	new = (t_stack *)malloc(1 * sizeof(t_stack));
-	if (new == 0)
-		return (0);
-	new->value = value;
-	new->next = NULL;
-	return (new);
+	if (lst != NULL && del != NULL)
+	{
+		free(lst);
+	}
 }

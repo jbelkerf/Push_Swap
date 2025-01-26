@@ -15,7 +15,7 @@
 /*
  * the lstsize iterite on the giving list to calculate its size
  */
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_stack *lst)
 {
 	int	i;
 

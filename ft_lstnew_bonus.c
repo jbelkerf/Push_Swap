@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
 /*
  * the lstnew take a void content and put it in a new node and return thr node

@@ -16,7 +16,7 @@
  * the lstlst take a string an iterite on it till it got the last node that will
  * be returned
  */
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	while (lst)
 	{

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:43 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 13:31:45 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:01:02 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/11/04 16:34:57 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
 /*
- * the lstnew take a void content and put it in a new node and return thr node
+ * the lstclear take a lst and del the entire lst
  */
-t_stack	*ft_lstnew(int value)
+void	ft_lstclear(t_stack **lst, void (*del)(void *))
 {
-	t_stack	*new;
+	t_stack	*p;
 
-	new = (t_stack *)malloc(1 * sizeof(t_stack));
-	if (new == 0)
-		return (0);
-	new->value = value;
-	new->next = NULL;
-	return (new);
+	if (lst == NULL || del == NULL)
+		return ;
+	p = *lst;
+	while (p)
+	{
+		p = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = p;
+	}
+	*lst = NULL;
 }

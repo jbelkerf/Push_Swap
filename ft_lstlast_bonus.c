@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:43 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 13:31:45 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:31 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/11/01 13:36:15 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
 /*
- * the lstnew take a void content and put it in a new node and return thr node
+ * the lstlst take a string an iterite on it till it got the last node that will
+ * be returned
  */
-t_stack	*ft_lstnew(int value)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack	*new;
-
-	new = (t_stack *)malloc(1 * sizeof(t_stack));
-	if (new == 0)
-		return (0);
-	new->value = value;
-	new->next = NULL;
-	return (new);
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (NULL);
 }

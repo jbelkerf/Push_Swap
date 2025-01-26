@@ -16,11 +16,11 @@
  * the lstdelone take a node and a del func used to delete the content and then
  * free the node
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_stack *lst, void (*del)(void *))
 {
 	if (lst != NULL && del != NULL)
 	{
-		del(lst->content);
+		del(lst->value);
 		free(lst);
 	}
 }

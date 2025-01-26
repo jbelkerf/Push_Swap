@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:43 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 13:31:45 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:23 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/11/01 15:19:46 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
 /*
- * the lstnew take a void content and put it in a new node and return thr node
+ * the lstiter take a list and a pointer to fun and aplly this func on every
+ * node from that list
  */
-t_stack	*ft_lstnew(int value)
+void	ft_lstiter(t_stack *lst, void (*f)(void *))
 {
-	t_stack	*new;
-
-	new = (t_stack *)malloc(1 * sizeof(t_stack));
-	if (new == 0)
-		return (0);
-	new->value = value;
-	new->next = NULL;
-	return (new);
+	while (lst && f)
+	{
+		f(lst->value);
+		lst = lst->next;
+	}
 }

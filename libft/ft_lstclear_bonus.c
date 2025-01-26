@@ -15,9 +15,9 @@
 /*
  * the lstclear take a lst and del the entire lst
  */
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_stack **lst, void (*del)(void *))
 {
-	t_list	*p;
+	t_stack	*p;
 
 	if (lst == NULL || del == NULL)
 		return ;

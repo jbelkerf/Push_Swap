@@ -16,7 +16,7 @@
  * the lstadd_front take a list and node the place this node in the front of 
  * this list
  */
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
 	if (new != NULL || lst != NULL)
 	{

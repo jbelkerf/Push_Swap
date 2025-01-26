@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:43 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 13:31:45 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:51 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/11/01 13:35:40 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
 /*
- * the lstnew take a void content and put it in a new node and return thr node
+ * the lstsize iterite on the giving list to calculate its size
  */
-t_stack	*ft_lstnew(int value)
+int	ft_lstsize(t_stack *lst)
 {
-	t_stack	*new;
+	int	i;
 
-	new = (t_stack *)malloc(1 * sizeof(t_stack));
-	if (new == 0)
+	i = 0;
+	if (lst == NULL)
 		return (0);
-	new->value = value;
-	new->next = NULL;
-	return (new);
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }

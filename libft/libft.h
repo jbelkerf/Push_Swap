@@ -17,21 +17,21 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-typedef struct s_list
+typedef struct a_stack
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+    int value;
+    struct a_stack *next;
+}  t_stack;
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_lstlast(t_list *lst);
-int		ft_lstsize(t_list *lst);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-t_list	*ft_lstnew(void *content);
+t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_lstiter(t_stack *lst, void (*f)(void *));
+void	ft_lstclear(t_stack **lst, void (*del)(void *));
+void	ft_lstdelone(t_stack *lst, void (*del)(void *));
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack	*ft_lstlast(t_stack *lst);
+int		ft_lstsize(t_stack *lst);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
+t_stack	*ft_lstnew(int value);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);

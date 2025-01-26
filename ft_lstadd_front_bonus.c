@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:43 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 13:31:45 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:00:51 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/11/04 16:38:01 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
 /*
- * the lstnew take a void content and put it in a new node and return thr node
+ * the lstadd_front take a list and node the place this node in the front of 
+ * this list
  */
-t_stack	*ft_lstnew(int value)
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
-	t_stack	*new;
-
-	new = (t_stack *)malloc(1 * sizeof(t_stack));
-	if (new == 0)
-		return (0);
-	new->value = value;
-	new->next = NULL;
-	return (new);
+	if (new != NULL || lst != NULL)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

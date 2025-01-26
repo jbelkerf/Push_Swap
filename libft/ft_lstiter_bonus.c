@@ -16,11 +16,11 @@
  * the lstiter take a list and a pointer to fun and aplly this func on every
  * node from that list
  */
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_stack *lst, void (*f)(void *))
 {
 	while (lst && f)
 	{
-		f(lst->content);
+		f(lst->value);
 		lst = lst->next;
 	}
 }
