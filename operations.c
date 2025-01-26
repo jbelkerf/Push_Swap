@@ -13,21 +13,24 @@ int stack_size(t_stack *stack)
     return (i);
 }
 
-void sa_or_b(t_stack **a)
+void sa_or_b(t_stack **a, int option, char stack)
 {
     t_stack *tmp;
-    
+    if (option == 1)
+        printf("s%c\n", stack);
     if (stack_size(*a) < 2)
-        error();
+       return ;
     tmp = *a;
     *a = (*a)->next;
     tmp->next = (*a)->next;
     (*a)->next = tmp;
 }
-void sa_and_b(t_stack **a, t_stack **b)
+void sa_and_b(t_stack **a, t_stack **b, int option)
 {
-    sa_or_b(b);
-    sa_or_b(a);
+    sa_or_b(b, 0, 'b');
+    sa_or_b(a, 0, 'a');
+    if (option)
+        printf("ss\n");
 }
 
 // void	ft_lstadd_front(t_stack **lst, t_stack *new)

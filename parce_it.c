@@ -71,7 +71,7 @@ void check_non_digits(char *str)
 		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ')
 			i++;
 		else
-			error();
+			error("non digit\n");
 	}
 }
 
@@ -112,7 +112,7 @@ void check_duplicated(char **args)
 	if (is_dup(ints, i))
 	{
 		free(ints);
-		error();
+		error("duplicated\n");
 	}
 	free(ints);
 }
