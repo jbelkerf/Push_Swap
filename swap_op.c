@@ -33,6 +33,8 @@ void sa_and_b(t_stack **a, t_stack **b, int option)
         printf("ss\n");
 }
 
+
+
 // void	ft_lstadd_front(t_stack **lst, t_stack *new)
 // {
 // 	if (new != NULL || lst != NULL)
