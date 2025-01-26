@@ -65,8 +65,8 @@ char	*multi_join(int argc, char **argv)
 			k++;
 			j++;
 		}
-        re[k] = ' ';
-        k++;
+		re[k] = ' ';
+		k++;
 		i++;
 	}
 	re[k] = 0;
@@ -106,6 +106,48 @@ void check_non_digits(char *str)
 	}
 }
 
+int	is_dup(int *tab, int size)
+{
+	int i = 0;
+	int j;
+
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] == tab[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return 0;
+}
+
+void check_duplicated(char **args)
+{
+	int i;
+	int *ints;
+
+	i = 0;
+	while (args[i])
+		i++;
+	ints = malloc(i * sizeof(int));
+	i = 0;
+	while (args[i])
+	{
+		ints[i] = ft_atoi(args[i]);
+		i++;
+	}
+	if (is_dup(ints, i))
+	{
+		free (ints);
+		error();
+	}
+	free(ints);
+}
+
 t_stack *parce_and_fill(int argc, char **argv)
 {
 	char	*joinedargm;
@@ -115,6 +157,7 @@ t_stack *parce_and_fill(int argc, char **argv)
 	joinedargm = multi_join(argc, argv);
 	check_non_digits(joinedargm);
 	splitedargm = ft_split(joinedargm, ' ');
+	check_duplicated(splitedargm);
 	stacka = init_stack(splitedargm, argc);
 	return stacka;
 }
@@ -126,7 +169,7 @@ int main(int argc, char **argv)
 	if (argc == 1)
 		error();
 	stacka = parce_and_fill(argc, argv);
-	sa_or_b(&stacka);
+	//sa_or_b(&stacka);
 	while (stacka)
 	{
 		printf("%d\n", stacka->value);
