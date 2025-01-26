@@ -10,22 +10,23 @@ void error(void)
 
 
 
-
-
 int main(int argc, char **argv)
 {
 	t_stack *stacka;
+	t_stack *tmp;
 
 	if (argc == 1)
 		error();
 	stacka = parce_and_fill(argc, argv);
-	//sa_or_b(&stacka);
+	sa_or_b(&stacka);
 	while (stacka)
 	{
 		printf("%d\n", stacka->value);
+		tmp = stacka;
 		stacka = stacka->next;
+		free(tmp);
 	}
-	ft_lstclear(&stacka, free);
+	//ftt_lstclear(&stacka);
 	//printf("%s\n", argv[0]);
 	return (0);
 }

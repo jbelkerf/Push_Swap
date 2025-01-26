@@ -15,17 +15,17 @@
 /*
  * the lstclear take a lst and del the entire lst
  */
-void	ft_lstclear(t_stack **lst, void (*del)(void *))
+void	ftt_lstclear(t_stack **lst)
 {
 	t_stack	*p;
 
-	if (lst == NULL || del == NULL)
+	if (lst == NULL)
 		return ;
 	p = *lst;
 	while (p)
 	{
-		p = (*lst)->next;
-		ft_lstdelone(*lst, del);
+		free(p);
+		*lst = (*lst)->next;
 		*lst = p;
 	}
 	*lst = NULL;

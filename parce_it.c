@@ -35,6 +35,19 @@ char	*multi_join(int argc, char **argv)
 	return (re);
 }
 
+void free_array(char **ar)
+{
+	int i;
+
+	i = 0;
+	while (ar[i])
+	{
+		free(ar[i]);
+		i++;
+	}
+	free(ar);
+}
+
 t_stack *init_stack(char **argm, int argc)
 {
 	int i;
@@ -98,7 +111,7 @@ void check_duplicated(char **args)
 	}
 	if (is_dup(ints, i))
 	{
-		free (ints);
+		free(ints);
 		error();
 	}
 	free(ints);
@@ -112,7 +125,9 @@ t_stack *parce_and_fill(int argc, char **argv)
 	joinedargm = multi_join(argc, argv);
 	check_non_digits(joinedargm);
 	splitedargm = ft_split(joinedargm, ' ');
+	free(joinedargm);
 	check_duplicated(splitedargm);
 	stacka = init_stack(splitedargm, argc);
+	free_array(splitedargm);
 	return stacka;
 }

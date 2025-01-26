@@ -13,5 +13,7 @@ t_stack *init_stack(char **argm, int argc);
 void check_non_digits(char *str);
 int	is_dup(int *tab, int size);
 void check_duplicated(char **args);
+void sa_or_b(t_stack **a);
 t_stack *parce_and_fill(int argc, char **argv);
+void	ftt_lstclear(t_stack **lst);
 #endif
