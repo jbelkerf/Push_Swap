@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:01:24 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/28 13:46:08 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/01/26 19:40:04 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
 
 typedef struct a_stack
 {
@@ -23,6 +24,15 @@ typedef struct a_stack
     struct a_stack *next;
 }  t_stack;
 
+int	print_char(char c);
+int	ft_printf(const char *str, ...);
+int	ft_putstr(char *str);
+int	print_pointer(unsigned long int pp);
+int	print_dec(int n, int c);
+int	print_unsigned(unsigned int n, int c);
+int	hexa_l(long pp, int c);
+int	hexa_u(unsigned long int pp, int c);
+int	check_flag(char c, va_list ap);
 t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstiter(t_stack *lst, void (*f)(void *));
 void	ft_lstclear(t_stack **lst, void (*del)(void *));

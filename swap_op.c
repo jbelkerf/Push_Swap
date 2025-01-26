@@ -32,19 +32,3 @@ void sa_and_b(t_stack **a, t_stack **b, int option)
     if (option)
         printf("ss\n");
 }
-
-
-
-// void	ft_lstadd_front(t_stack **lst, t_stack *new)
-// {
-// 	if (new != NULL || lst != NULL)
-// 	{
-// 		new->next = *lst;
-// 		*lst = new;
-// 	}
-// }
-
-// void pa_or_b(t_stack **a, t_stack **b, int option)
-// {
-    
-// }

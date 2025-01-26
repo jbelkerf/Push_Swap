@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 17:08:26 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/01/26 19:24:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *str)
+int	hexa_ll(unsigned long pp, int c)
 {
-	int	i;
-	int	j;
+	char	*base;
 
-	if (str == NULL)
-		str = "(null)";
-	i = 0;
-	j = 0;
-	while (str[j])
+	base = "0123456789abcdef";
+	if (pp <= 15)
 	{
-		i += print_char(str[j]);
-		j++;
+		write(1, &base[pp], 1);
+		c++;
 	}
-	return (i);
+	else
+	{
+		c += hexa_ll(pp / 16, c);
+		write(1, &base[pp % 16], 1);
+		c++;
+	}
+	return (c);
+}
+
+int	print_pointer(unsigned long int pp)
+{
+	write(1, "0x", 2);
+	return (hexa_ll(pp, 0) + 2);
 }

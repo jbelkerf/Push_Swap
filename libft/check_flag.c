@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_flag.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:17:32 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/28 13:01:42 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/01/26 19:40:18 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	check_flag(char c, va_list ap)
 {

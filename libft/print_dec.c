@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_dec.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:21:19 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 21:14:44 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/01/26 19:24:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	print_dec(int n, int count)
 {

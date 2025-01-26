@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   print_lhexa.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:23 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 15:19:46 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/11/07 16:58:57 by jbelkerf          #+#    #+#             */
+/*   Updated: 2025/01/26 19:24:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-/*
- * the lstiter take a list and a pointer to fun and aplly this func on every
- * node from that list
- */
-void	ft_lstiter(t_stack *lst, void (*f)(void *))
+int	hexa_l(long pp, int c)
 {
-	while (lst && f)
+	char	*base;
+
+	base = "0123456789abcdef";
+	if (pp >= 0 && pp <= 15)
 	{
-		f(lst->value);
-		lst = lst->next;
+		write(1, &base[pp], 1);
+		c++;
 	}
+	else
+	{
+		c += hexa_l(pp / 16, c);
+		write(1, &base[pp % 16], 1);
+		c++;
+	}
+	return (c);
 }

@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/27 17:08:02 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/11/27 18:16:35 by jbelkerf          #+#    #+#             */
+/*   Updated: 2025/01/26 19:24:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	print_char(char c)
+int	print_unsigned(unsigned int n, int count)
 {
-	write(1, &c, 1);
-	return (1);
+	if (n <= 9)
+		count += print_char(n + '0');
+	else
+	{
+		count = print_dec(n / 10, count);
+		count += print_char(n % 10 + '0');
+	}
+	return (count);
 }

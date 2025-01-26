@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 16:08:23 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/11/01 15:19:46 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
+/*   Updated: 2025/01/26 19:24:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-/*
- * the lstiter take a list and a pointer to fun and aplly this func on every
- * node from that list
- */
-void	ft_lstiter(t_stack *lst, void (*f)(void *))
+int	ft_putstr(char *str)
 {
-	while (lst && f)
+	int	i;
+	int	j;
+
+	if (str == NULL)
+		str = "(null)";
+	i = 0;
+	j = 0;
+	while (str[j])
 	{
-		f(lst->value);
-		lst = lst->next;
+		i += print_char(str[j]);
+		j++;
 	}
+	return (i);
 }
