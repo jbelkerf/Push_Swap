@@ -6,16 +6,16 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/01/26 19:24:14 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/27 12:45:00 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
-	int i;
-	char *dup;
+	int		i;
+	char	*dup;
 
 	i = 0;
 	while (str[i])

@@ -6,17 +6,17 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:02:22 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/27 12:23:08 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/27 12:51:55 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void  rev_rotate_a_or_b(t_stack **stack, int option, int pattern)
+void	rev_rotate_a_or_b(t_stack **stack, int option, int pattern)
 {
-	t_stack *head;
-	t_stack *prev;
-	t_stack *tmp;
+	t_stack	*head;
+	t_stack	*prev;
+	t_stack	*tmp;
 
 	if (option)
 	{
@@ -41,7 +41,7 @@ void  rev_rotate_a_or_b(t_stack **stack, int option, int pattern)
 	}
 }
 
-void rev_rotate_a_and_b(t_stack **a, t_stack **b, int option)
+void	rev_rotate_a_and_b(t_stack **a, t_stack **b, int option)
 {
 	if (option)
 		ft_printf("rrr\n");

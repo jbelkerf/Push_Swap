@@ -6,16 +6,16 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:33:45 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/27 12:08:08 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/27 13:50:15 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void rotate_a_or_b(t_stack **stack, int option, int pattern)
+void	rotate_a_or_b(t_stack **stack, int option, int pattern)
 {
-	t_stack *tmp;
-	t_stack *tmp_next;
+	t_stack	*tmp;
+	t_stack	*tmp_next;
 
 	if (option)
 	{
@@ -33,7 +33,8 @@ void rotate_a_or_b(t_stack **stack, int option, int pattern)
 		ft_lstadd_back(stack, tmp);
 	}
 }
-void rotate_a_and_b(t_stack **a, t_stack **b, int option)
+
+void	rotate_a_and_b(t_stack **a, t_stack **b, int option)
 {
 	if (option)
 	{

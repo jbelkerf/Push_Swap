@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:01:24 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/01/26 19:40:04 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/27 12:49:03 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,19 @@
 
 typedef struct a_stack
 {
-    int value;
-    struct a_stack *next;
-}  t_stack;
+	int				value;
+	struct a_stack	*next;
+}	t_stack;
 
-int	print_char(char c);
-int	ft_printf(const char *str, ...);
-int	ft_putstr(char *str);
-int	print_pointer(unsigned long int pp);
-int	print_dec(int n, int c);
-int	print_unsigned(unsigned int n, int c);
-int	hexa_l(long pp, int c);
-int	hexa_u(unsigned long int pp, int c);
-int	check_flag(char c, va_list ap);
-t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
-void	ft_lstiter(t_stack *lst, void (*f)(void *));
+int		print_char(char c);
+int		ft_printf(const char *str, ...);
+int		ft_putstr(char *str);
+int		print_pointer(unsigned long int pp);
+int		print_dec(int n, int c);
+int		print_unsigned(unsigned int n, int c);
+int		hexa_l(long pp, int c);
+int		hexa_u(unsigned long int pp, int c);
+int		check_flag(char c, va_list ap);
 void	ft_lstclear(t_stack **lst, void (*del)(void *));
 void	ft_lstdelone(t_stack *lst, void (*del)(void *));
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
