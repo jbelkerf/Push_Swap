@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 19:05:45 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/26 20:08:15 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/27 12:07:55 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void push_stack(t_stack **wahd, t_stack **joj, int option, int pattern)
 
 	if (option)
 	{
-		if (pattern)
+		if (pattern == 1)
 			ft_printf("pa\n");
 		else
 			ft_printf("pb\n");

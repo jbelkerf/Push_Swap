@@ -22,9 +22,10 @@ int main(int argc, char **argv)
 	stacka = parce_and_fill(argc, argv);
 	push_stack(&stacka, &stackb, 1, 1);
 	push_stack(&stacka, &stackb, 1, 1);
+	push_stack(&stacka, &stackb, 1, 1);
+	push_stack(&stacka, &stackb, 1, 1);
 
-	rotate_a_orb(&stacka, 1, 1);
-	rotate_a_orb(&stackb, 1, 0);
+	rev_rotate_a_and_b(&stacka, &stackb, 1);
 
 	ft_printf("a--->\n");
 	while (stacka)

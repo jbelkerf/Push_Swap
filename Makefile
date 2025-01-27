@@ -2,7 +2,7 @@ NAME=push_swap
 CC=cc 
 libft=./libft/libft.a
 CFLAGS= -Wall -Wextra -Werror
-M_SRC= push_swap.c swap_op.c parce_it.c push_op.c  rotate_op.c
+M_SRC= push_swap.c swap_op.c parce_it.c push_op.c  rotate_op.c rev_rotate_op.c
 M_OBJ=$(M_SRC:.c=.o)
 
 all: $(M_OBJ)
