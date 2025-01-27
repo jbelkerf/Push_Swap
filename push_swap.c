@@ -20,9 +20,11 @@ int main(int argc, char **argv)
 		error("zb\n");
 	stackb = NULL;
 	stacka = parce_and_fill(argc, argv);
-	sa_and_b(&stackb, &stacka, 1);
 	push_stack(&stacka, &stackb, 1, 1);
 	push_stack(&stacka, &stackb, 1, 1);
+
+	rotate_a_orb(&stacka, 1, 1);
+	rotate_a_orb(&stackb, 1, 0);
 
 	ft_printf("a--->\n");
 	while (stacka)

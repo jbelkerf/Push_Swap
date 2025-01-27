@@ -17,6 +17,7 @@ void sa_or_b(t_stack **a, int option, char stack);
 t_stack *parce_and_fill(int argc, char **argv);
 void	ftt_lstclear(t_stack **lst);
 void sa_and_b(t_stack **a, t_stack **b, int option);
+void rotate_a_orb(t_stack **stack, int option, int pattern);
 void push_stack(t_stack **wahd, t_stack **joj, int option, int pattern);
 int stack_size(t_stack *stack);
 #endif
