@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:02 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/27 13:55:09 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/30 15:53:26 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,20 +75,6 @@ t_stack	*init_stack(char **argm, int argc)
 	return (head);
 }
 
-void	check_non_digits(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ')
-			i++;
-		else
-			error("non digit\n");
-	}
-}
-
 int	is_dup(int *tab, int size)
 {
 	int	i;
@@ -107,29 +93,6 @@ int	is_dup(int *tab, int size)
 		i++;
 	}
 	return (0);
-}
-
-void	check_duplicated(char **args)
-{
-	int	i;
-	int	*ints;
-
-	i = 0;
-	while (args[i])
-		i++;
-	ints = malloc(i * sizeof(int));
-	i = 0;
-	while (args[i])
-	{
-		ints[i] = ft_atoi(args[i]);
-		i++;
-	}
-	if (is_dup(ints, i))
-	{
-		free(ints);
-		error("duplicated\n");
-	}
-	free(ints);
 }
 
 t_stack	*parce_and_fill(int argc, char **argv)
