@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:46:34 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/30 15:54:55 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/30 16:05:13 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ t_stack	*parce_and_fill(int argc, char **argv);
 t_stack	*ft_lstnew(int value);
 int		is_dup(int *tab, int size);
 int		stack_size(t_stack *stack);
+int		args_lenght(int argc, char **argv);
 char	*multi_join(int argc, char **argv);
 #endif

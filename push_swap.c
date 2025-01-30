@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:53:06 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/27 13:54:38 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/30 16:08:15 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ int	main(int argc, char **argv)
 		error("zb\n");
 	stackb = NULL;
 	stacka = parce_and_fill(argc, argv);
-	push_stack(&stacka, &stackb, 1, 1);
-	push_stack(&stacka, &stackb, 1, 1);
-	push_stack(&stacka, &stackb, 1, 1);
-	push_stack(&stacka, &stackb, 1, 1);
-	rev_rotate_a_and_b(&stacka, &stackb, 1);
-	ft_printf("a--->\n");
 	while (stacka)
 	{
 		printf("%d\n", stacka->value);

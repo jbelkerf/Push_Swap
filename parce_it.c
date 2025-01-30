@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:02 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/30 15:53:26 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/30 16:06:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,9 @@ char	*multi_join(int argc, char **argv)
 	int		i;
 	int		j;
 	int		k;
-	int		str_tot;
 	char	*re;
 
-	i = 1;
-	str_tot = 0;
-	while (i < argc)
-	{
-		str_tot += ft_strlen(argv[i]);
-		i++;
-	}
-	re = malloc((str_tot + 1 + argc) * sizeof(char));
+	re = malloc((args_lenght(argc, argv) + 1 + argc) * sizeof(char));
 	i = 1;
 	k = 0;
 	while (i < argc)
