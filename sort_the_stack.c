@@ -6,13 +6,13 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 11:59:37 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/01/31 13:31:16 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:55:40 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void sort_three(t_stack **a)
+void	sort_three(t_stack **a)
 {
 	set_sorted_index(a);
 	if (order_of_big(*a, 2) == 3 && order_of_big(*a, 0) == 2)
@@ -62,13 +62,11 @@ void	tiny_sort(t_stack **a, t_stack **b)
 		sa_or_b(a, 1, 1);
 	else if (stack_size(*a) == 3)
 		sort_three(a);
-	else
+	else if (stack_size(*a) > 3)
 	{
 		sort_more_than_three(a, b);
 	}
 }
-
-
 
 void	second_part(t_stack **a, t_stack **b)
 {

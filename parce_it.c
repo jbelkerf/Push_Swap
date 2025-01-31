@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parce_it.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:02 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/30 16:06:05 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/31 15:02:54 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,18 @@ void	free_array(char **ar)
 	free(ar);
 }
 
-t_stack	*init_stack(char **argm, int argc)
+t_stack	*init_stack(char **argm)
 {
 	int		i;
 	t_stack	*head;
+	int		total_argument;
 
 	head = NULL;
+	total_argument = 0;
+	while (argm[total_argument])
+		total_argument++;
 	i = 0;
-	while (i < argc - 1)
+	while (i < total_argument)
 	{
 		ft_lstadd_back(&head, ft_lstnew(ft_atoi(argm[i])));
 		i++;
@@ -94,11 +98,12 @@ t_stack	*parce_and_fill(int argc, char **argv)
 	t_stack	*stacka;
 
 	joinedargm = multi_join(argc, argv);
+	ft_printf("joined %s\n", joinedargm);
 	check_non_digits(joinedargm);
 	splitedargm = ft_split(joinedargm, ' ');
 	free(joinedargm);
 	check_duplicated(splitedargm);
-	stacka = init_stack(splitedargm, argc);
+	stacka = init_stack(splitedargm);
 	free_array(splitedargm);
 	return (stacka);
 }
