@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:46:34 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/31 11:51:44 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/01/31 13:23:05 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,14 @@ void	push_stack(t_stack **wahd, t_stack **joj, int option, int pattern);
 void	rev_rotate_a_or_b(t_stack **stack, int option, int pattern);
 void	rev_rotate_a_and_b(t_stack **a, t_stack **b, int option);
 void	set_sorted_index(t_stack **stack);
+void	sort_the_stack(t_stack **a, t_stack **b);
+void	tiny_sort(t_stack **a, t_stack **b);
 t_stack	*init_stack(char **argm, int argc);
 t_stack	*parce_and_fill(int argc, char **argv);
 t_stack	*ft_lstnew(int value);
 int		is_dup(int *tab, int size);
 int		stack_size(t_stack *stack);
 int		args_lenght(int argc, char **argv);
+int	order_of_big(t_stack *stack, int big);
 char	*multi_join(int argc, char **argv);
 #endif
