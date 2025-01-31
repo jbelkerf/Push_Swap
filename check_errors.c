@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 15:52:49 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/30 15:53:32 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/31 11:55:15 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_non_digits(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ')
+		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ' || str[i] == '-')
 			i++;
 		else
 			error("non digit\n");
