@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:52:02 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/31 15:02:54 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/01 12:43:33 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ t_stack	*parce_and_fill(int argc, char **argv)
 	t_stack	*stacka;
 
 	joinedargm = multi_join(argc, argv);
-	ft_printf("joined %s\n", joinedargm);
 	check_non_digits(joinedargm);
 	splitedargm = ft_split(joinedargm, ' ');
 	free(joinedargm);

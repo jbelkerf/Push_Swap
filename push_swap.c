@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:53:06 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/31 14:53:57 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/01 12:54:48 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,5 @@ int	main(int argc, char **argv)
 		tiny_sort(&stacka, &stackb);
 	else
 		sort_the_stack(&stacka, &stackb);
-
-	while (stacka)
-	{
-		ft_printf("i = %d : value = %d \n", stacka->value, stacka->value);
-		stacka = stacka->next;
-	}
 	return (0);
 }

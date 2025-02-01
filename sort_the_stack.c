@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 11:59:37 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/01/31 14:55:40 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/01 12:54:16 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	sort_three(t_stack **a)
 {
 	set_sorted_index(a);
-	if (order_of_big(*a, 2) == 3 && order_of_big(*a, 0) == 2)
+	if (stack_size(*a) == 2 && (*a)->sorted_index > (*a)->next->sorted_index)
+		sa_or_b(a, 1, 1);
+	else if (order_of_big(*a, 2) == 3 && order_of_big(*a, 0) == 2)
 		sa_or_b(a, 1, 1);
 	else if (order_of_big(*a, 2) == 1)
 	{
