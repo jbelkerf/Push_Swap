@@ -6,7 +6,7 @@
 #    By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/30 15:56:44 by codespace         #+#    #+#              #
-#    Updated: 2025/02/01 13:52:33 by jbelkerf         ###   ########.fr        #
+#    Updated: 2025/02/01 13:55:17 by jbelkerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ bonus: $(B_OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	$(MAKE) clean -C ./libft
-	rm -f $(M_OBJ)
+	rm -f $(M_OBJ) $(B_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
