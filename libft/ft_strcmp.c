@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 13:53:06 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/01 13:50:44 by jbelkerf         ###   ########.fr       */
+/*   Created: 2025/01/09 14:42:02 by jbelkerf          #+#    #+#             */
+/*   Updated: 2025/01/09 14:42:47 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_stack	*stacka;
-	t_stack	*stackb;
+	int	i;
 
-	if (argc <= 1)
-		error();
-	stackb = NULL;
-	stacka = parce_and_fill(argc, argv);
-	set_sorted_index(&stacka);
-	if (stack_size(stacka) <= 5)
-		tiny_sort(&stacka, &stackb);
-	else
-		sort_the_stack(&stacka, &stackb);
-	return (0);
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	if (s1[i] == 0 && s2[i] == 0)
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

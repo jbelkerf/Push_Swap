@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:46:34 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/31 15:03:14 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:08:53 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
-void	error(char *str);
+void	error(void);
 void	check_non_digits(char *str);
 void	check_duplicated(char **args);
 void	sa_or_b(t_stack **a, int option, int pattern);

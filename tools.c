@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 15:57:27 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/31 13:28:18 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:50:51 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,10 @@ int	order_of_big(t_stack *stack, int big)
 		stack = stack->next;
 	}
 	return (-1);
+}
+
+void	error(void)
+{
+	ft_putstr_fd("error", 5);
+	exit(1);
 }
