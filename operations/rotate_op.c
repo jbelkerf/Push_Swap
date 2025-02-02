@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:33:45 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/27 13:50:15 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/02 10:07:53 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
 void	rotate_a_or_b(t_stack **stack, int option, int pattern)
 {

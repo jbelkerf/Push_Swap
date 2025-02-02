@@ -6,7 +6,7 @@
 #    By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/30 15:56:44 by codespace         #+#    #+#              #
-#    Updated: 2025/02/01 13:55:17 by jbelkerf         ###   ########.fr        #
+#    Updated: 2025/02/02 10:17:48 by jbelkerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,15 @@ libft=./libft/libft.a
 
 CFLAGS= -Wall -Wextra -Werror
 
-M_SRC= push_swap.c swap_op.c parce_it.c push_op.c  rotate_op.c rev_rotate_op.c \
-check_errors.c  tools.c set_sorted_index.c sort_the_stack.c
+M_SRC= push_swap.c operations/swap_op.c parce_it.c operations/push_op.c  \
+operations/rotate_op.c operations/rev_rotate_op.c check_errors.c  tools.c \
+set_sorted_index.c sort_the_stack.c
 
 M_OBJ=$(M_SRC:.c=.o)
 
-B_SRC= checker.c push_op.c rotate_op.c rev_rotate_op.c swap_op.c parce_it.c \
-get_next_line_utils.c get_next_line.c tools.c set_sorted_index.c check_errors.c \
+B_SRC= checker.c operations/push_op.c operations/rotate_op.c \
+operations/rev_rotate_op.c operations/swap_op.c parce_it.c gnl/get_next_line_utils.c \
+gnl/get_next_line.c tools.c set_sorted_index.c check_errors.c 
 
 
 B_OBJ=$(B_SRC:.c=.o)

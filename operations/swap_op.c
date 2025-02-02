@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:52:32 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/27 13:54:05 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/02 10:07:58 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
 int	stack_size(t_stack *stack)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 19:05:45 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/27 13:26:14 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/02 10:07:42 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
 void	push_stack(t_stack **wahd, t_stack **joj, int option, int pattern)
 {

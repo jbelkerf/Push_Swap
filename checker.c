@@ -6,12 +6,12 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:04:24 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/02/01 13:45:04 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/02 10:10:18 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-#include "get_next_line.h"
+#include "./gnl/get_next_line.h"
 
 void	do_operation(char *str, t_stack **a, t_stack **b)
 {
