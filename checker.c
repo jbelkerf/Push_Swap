@@ -76,5 +76,7 @@ int	main(int argc, char **argv)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
+	free_stack(&stacka);
+	free_stack(&stackb);
 	return (0);
 }

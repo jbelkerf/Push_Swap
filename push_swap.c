@@ -26,5 +26,7 @@ int	main(int argc, char **argv)
 		tiny_sort(&stacka, &stackb);
 	else
 		sort_the_stack(&stacka, &stackb);
+	free_stack(&stacka);
+	free_stack(&stackb);
 	return (0);
 }
