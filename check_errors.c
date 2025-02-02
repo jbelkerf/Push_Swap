@@ -12,17 +12,27 @@
 
 #include "header.h"
 
-void	check_non_digits(char *str)
+void	check_non_digits(int argc, char **argv)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	c;
 
-	i = 0;
-	while (str[i])
+	i = 1;
+	while (i < argc)
 	{
-		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ' || str[i] == '-')
-			i++;
-		else
+		j = 0;
+		if (argv[i][0] == 0)
 			error();
+		while (argv[i][j])
+		{
+			c = argv[i][j];
+			if ((c <= '9' && c >= '0') || c == '-' || c == '+')
+				j++;
+			else
+				error();
+		}
+		i++;
 	}
 }
 
