@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 15:52:49 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/01 13:29:39 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:09:24 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ int	ftt_atoi(const char *str, int *err)
 		str++;
 	}
 	if ((*str > '9' || *str < '0'))
-	{
 		*err = 1;
-	}
 	while (*str >= '0' && *str <= '9')
 	{
 		n = n * 10 + (*str - '0');
@@ -89,10 +87,7 @@ void	check_duplicated(char **args)
 		}
 		i++;
 	}
-	if (is_dup(ints, i))
-	{
-		free(ints);
-		error();
-	}
 	free(ints);
+	if (is_dup(ints, i))
+		error();
 }

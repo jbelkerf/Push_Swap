@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:01:24 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/02/01 13:28:17 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:08:49 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct a_stack
 	struct a_stack	*next;
 }	t_stack;
 
-int     ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 int		print_char(char c);
 int		ft_printf(const char *str, ...);
 int		ft_putstr(char *str);
