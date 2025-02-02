@@ -97,8 +97,8 @@ t_stack	*parce_and_fill(int argc, char **argv)
 	char	**splitedargm;
 	t_stack	*stacka;
 
+	check_non_digits(argc, argv);
 	joinedargm = multi_join(argc, argv);
-	check_non_digits(joinedargm);
 	splitedargm = ft_split(joinedargm, ' ');
 	free(joinedargm);
 	check_duplicated(splitedargm);
