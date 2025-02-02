@@ -12,6 +12,18 @@
 
 #include "header.h"
 
+void	free_stack(t_stack **a)
+{
+	t_stack	*prev;
+
+	while (*a)
+	{
+		prev = *a;
+		*a = (*a)->next;
+		free(prev);
+	}
+}
+
 int	args_lenght(int argc, char **argv)
 {
 	int	i;
