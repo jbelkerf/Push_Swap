@@ -12,6 +12,37 @@
 
 #include "header.h"
 
+int	ftt_atoi(const char *str, int *err)
+{
+	long int	n;
+	int			sign;
+
+	n = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	if ((*str > '9' || *str < '0'))
+	{
+		*err = 1;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		n = n * 10 + (*str - '0');
+		str++;
+		if (n < 0 && sign == -1)
+			return (0);
+		else if (n < 0 && sign == 1)
+			return (-1);
+	}
+	return ((int)(sign * n));
+}
+
 void	check_non_digits(int argc, char **argv)
 {
 	int		i;
@@ -39,16 +70,23 @@ void	check_non_digits(int argc, char **argv)
 void	check_duplicated(char **args)
 {
 	int	i;
+	int	err;
 	int	*ints;
 
 	i = 0;
+	err = 0;
 	while (args[i])
 		i++;
 	ints = malloc(i * sizeof(int));
 	i = 0;
 	while (args[i])
 	{
-		ints[i] = ft_atoi(args[i]);
+		ints[i] = ftt_atoi(args[i], &err);
+		if (err == 1)
+		{
+			free(ints);
+			error();
+		}
 		i++;
 	}
 	if (is_dup(ints, i))
