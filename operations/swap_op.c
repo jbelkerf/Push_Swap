@@ -49,5 +49,5 @@ void	sa_and_b(t_stack **a, t_stack **b, int option)
 	sa_or_b(b, 0, 'b');
 	sa_or_b(a, 0, 'a');
 	if (option)
-		printf("ss\n");
+		ft_printf("ss\n");
 }

@@ -32,12 +32,12 @@ int	ftt_atoi(const char *str, int *err)
 	while (*str >= '0' && *str <= '9')
 	{
 		n = n * 10 + (*str - '0');
+		if ((n > 2147483647 && sign == 1) || (n > 2147483648 && sign == -1))
+			return(*err= 1, 0);
 		str++;
-		if (n < 0 && sign == -1)
-			return (0);
-		else if (n < 0 && sign == 1)
-			return (-1);
 	}
+	if (*str)
+		*err = 1;
 	return ((int)(sign * n));
 }
 
@@ -52,14 +52,14 @@ void	check_non_digits(int argc, char **argv)
 	{
 		j = 0;
 		if (argv[i][0] == 0)
-			error();
+			error("non di 1");
 		while (argv[i][j])
 		{
 			c = argv[i][j];
 			if ((c <= '9' && c >= '0') || c == '-' || c == '+')
 				j++;
 			else
-				error();
+				error("non dig 2");
 		}
 		i++;
 	}
@@ -83,11 +83,16 @@ void	check_duplicated(char **args)
 		if (err == 1)
 		{
 			free(ints);
-			error();
+			free_array(args);
+			error("dup 1");
 		}
 		i++;
 	}
-	free(ints);
 	if (is_dup(ints, i))
-		error();
+	{
+		free(ints);
+		free_array(args);
+		error("dup 2");
+	}
+	free(ints);
 }
