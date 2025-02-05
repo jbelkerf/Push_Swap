@@ -37,13 +37,13 @@ all: $(NAME)
 
 
 $(NAME) : $(OBJ)
-	$(AR) $(ARFLAG) $(NAME) $?
+	@$(AR) $(ARFLAG) $(NAME) $?
 
 %.o: %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
