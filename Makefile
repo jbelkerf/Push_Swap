@@ -18,7 +18,7 @@ NAME_COUNTER=counter
 
 CC=cc 
 
-libft=./libft/libft.a
+LIBFT=./libft/libft.a
 
 CFLAGS= -Wall -Wextra -Werror
 
@@ -38,20 +38,21 @@ M_OBJ=$(M_SRC:.c=.o)
 
 B_OBJ=$(B_SRC:.c=.o)
 
-all: $(M_OBJ)
-	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) -g -fsanitize=address  $(M_OBJ) $(libft) -o $(NAME)
+all: $(M_OBJ) $(LIBFT)
+	@$(CC) $(CFLAGS) -g -fsanitize=address  $(M_OBJ) $(LIBFT) -o $(NAME)
 
-bonus: $(B_OBJ)
-	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) -g -fsanitize=address $(B_OBJ) $(libft) -o $(NAME_BONUS)
+truth: all bonus counter clean
 
-counter: $(C_OBJ)
-	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) -g -fsanitize=address $(C_OBJ) $(libft) -o $(NAME_COUNTER)
+bonus: $(B_OBJ) $(LIBFT)
+	@$(CC) $(CFLAGS) -g -fsanitize=address $(B_OBJ) $(LIBFT) -o $(NAME_BONUS)
+
+counter: $(C_OBJ) $(LIBFT)
+	@$(CC) $(CFLAGS) -g -fsanitize=address $(C_OBJ) $(LIBFT) -o $(NAME_COUNTER)
 
 %.o:%.c header.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+$(LIBFT):
+	$(MAKE) -C ./libft
 clean:
 	$(MAKE) clean -C ./libft
 	rm -f $(M_OBJ) $(B_OBJ) $(C_OBJ)
