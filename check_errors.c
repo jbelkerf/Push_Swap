@@ -32,12 +32,12 @@ int	ftt_atoi(const char *str, int *err)
 	while (*str >= '0' && *str <= '9')
 	{
 		n = n * 10 + (*str - '0');
+		if ((n > 2147483647 && sign == 1) || (n > 2147483648 && sign == -1))
+			return(*err= 1, 0);
 		str++;
-		if (n < 0 && sign == -1)
-			return (0);
-		else if (n < 0 && sign == 1)
-			return (-1);
 	}
+	if (*str)
+		*err = 1;
 	return ((int)(sign * n));
 }
 
