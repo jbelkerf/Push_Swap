@@ -35,16 +35,21 @@ void	do_operation(char *str, t_stack **a, t_stack **b)
 		rev_rotate_a_or_b(a, 0, 0);
 	else if (!ft_strcmp(str, "rrb\n"))
 		rev_rotate_a_or_b(b, 0, 0);
-	else if (!ft_strcmp(str, "rrr"))
+	else if (!ft_strcmp(str, "rrr\n"))
 		rev_rotate_a_and_b(a, b, 0);
 	else
+	{
+		free(str);
+		free_stack(a);
+		free_stack(b);
 		error("bad instraction");
+	}
 }
 
 int	is_sorted(t_stack *a)
 {
 	set_sorted_index(&a);
-	while (a->next)
+	while (a && a->next)
 	{
 		if (a->sorted_index > a->next->sorted_index)
 			return (0);

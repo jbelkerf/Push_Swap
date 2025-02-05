@@ -19,6 +19,7 @@
 # include "libft/libft.h"
 
 void	error(char *str);
+void	free_array(char **ar);
 void	free_stack(t_stack **a);
 void	check_non_digits(int argc, char **argv);
 void	check_duplicated(char **args);

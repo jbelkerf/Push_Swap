@@ -83,6 +83,7 @@ void	check_duplicated(char **args)
 		if (err == 1)
 		{
 			free(ints);
+			free_array(args);
 			error("dup 1");
 		}
 		i++;
@@ -90,6 +91,7 @@ void	check_duplicated(char **args)
 	if (is_dup(ints, i))
 	{
 		free(ints);
+		free_array(args);
 		error("dup 2");
 	}
 	free(ints);
