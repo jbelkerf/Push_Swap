@@ -54,8 +54,8 @@ int	order_of_big(t_stack *stack, int big)
 	return (-1);
 }
 
-void	error(void)
+void	error(char *str)
 {
-	ft_putstr_fd("error\n", 1);
+	ft_putstr_fd(str, 1);
 	exit(1);
 }

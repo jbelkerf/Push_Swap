@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	t_stack	*stackb;
 
 	if (argc <= 1)
-		error();
+		error("too few argument");
 	stackb = NULL;
 	stacka = parce_and_fill(argc, argv);
 	set_sorted_index(&stacka);

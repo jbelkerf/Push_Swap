@@ -38,7 +38,7 @@ void	do_operation(char *str, t_stack **a, t_stack **b)
 	else if (!ft_strcmp(str, "rrr"))
 		rev_rotate_a_and_b(a, b, 0);
 	else
-		error();
+		error("bad instraction");
 }
 
 int	is_sorted(t_stack *a)
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 	char	*str;
 
 	if (argc <= 1)
-		error();
+		error("too few argms");
 	stackb = NULL;
 	stacka = parce_and_fill(argc, argv);
 	while (1)

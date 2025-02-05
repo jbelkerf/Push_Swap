@@ -39,15 +39,15 @@ M_OBJ=$(M_SRC:.c=.o)
 B_OBJ=$(B_SRC:.c=.o)
 
 all: $(M_OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS) -g -fsanitize=address  $(M_OBJ) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS)  $(M_OBJ) $(LIBFT) -o $(NAME)
 
 truth: all bonus counter clean
 
 bonus: $(B_OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS) -g -fsanitize=address $(B_OBJ) $(LIBFT) -o $(NAME_BONUS)
+	@$(CC) $(CFLAGS)  $(B_OBJ) $(LIBFT) -o $(NAME_BONUS)
 
 counter: $(C_OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS) -g -fsanitize=address $(C_OBJ) $(LIBFT) -o $(NAME_COUNTER)
+	@$(CC) $(CFLAGS) $(C_OBJ) $(LIBFT) -o $(NAME_COUNTER)
 
 %.o:%.c header.h
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -55,7 +55,7 @@ $(LIBFT):
 	$(MAKE) -C ./libft
 clean:
 	$(MAKE) clean -C ./libft
-	rm -f $(M_OBJ) $(B_OBJ) $(C_OBJ)
+	@rm -f $(M_OBJ) $(B_OBJ) $(C_OBJ)
 
 fclean: clean
 	rm -f $(NAME) $(NAME_BONUS) $(NAME_COUNTER)
