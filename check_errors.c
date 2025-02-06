@@ -56,7 +56,7 @@ void	check_non_digits(int argc, char **argv)
 		while (argv[i][j])
 		{
 			c = argv[i][j];
-			if ((c <= '9' && c >= '0') || c == '-' || c == '+')
+			if ((c <= '9' && c >= '0') || c == '-' || c == '+' || c == ' ')
 				j++;
 			else
 				error("non dig 2");

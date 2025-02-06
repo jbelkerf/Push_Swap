@@ -57,6 +57,18 @@ int	order_of_big(t_stack *stack, int big)
 void	error(char *str)
 {
 	(void)(str);
-	ft_putstr_fd("Error\n", 1);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
+}
+
+int	is_sorted(t_stack *a)
+{
+	set_sorted_index(&a);
+	while (a && a->next)
+	{
+		if (a->sorted_index > a->next->sorted_index)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }
