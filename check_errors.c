@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 15:52:49 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/06 12:51:59 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:27:27 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,21 @@ int	ftt_atoi(const char *str, int *err)
 	return ((int)(sign * n));
 }
 
+int	is_empty(char *argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (argv[i] == ' ')
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
 void	check_non_digits(int argc, char **argv)
 {
 	int		i;
@@ -51,7 +66,7 @@ void	check_non_digits(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
-		if (argv[i][0] == 0)
+		if (argv[i][0] == 0 || is_empty(argv[i]))
 			error("non di 1");
 		while (argv[i][j])
 		{

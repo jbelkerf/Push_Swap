@@ -6,7 +6,7 @@
 #    By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/30 15:56:44 by codespace         #+#    #+#              #
-#    Updated: 2025/02/06 12:57:03 by jbelkerf         ###   ########.fr        #
+#    Updated: 2025/02/06 17:06:04 by jbelkerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ M_OBJ=$(M_SRC:.c=.o)
 B_OBJ=$(B_SRC:.c=.o)
 
 all: $(M_OBJ) $(LIBFT)
-	$(CC) $(CFLAGS)  $(M_OBJ) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) -g -fsanitize=address $(M_OBJ) $(LIBFT) -o $(NAME)
 
 truth: all bonus counter clean
 
 bonus: $(B_OBJ) $(LIBFT)
-	$(CC) $(CFLAGS)  $(B_OBJ) $(LIBFT) -o $(NAME_BONUS)
+	$(CC) $(CFLAGS) -g -fsanitize=address $(B_OBJ) $(LIBFT) -o $(NAME_BONUS)
 
 counter: $(C_OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(C_OBJ) $(LIBFT) -o $(NAME_COUNTER)

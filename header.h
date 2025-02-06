@@ -6,16 +6,13 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:46:34 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/01 13:08:53 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:59:32 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
 # include "libft/libft.h"
 
 void	error(char *str);
@@ -40,6 +37,6 @@ int		is_dup(int *tab, int size);
 int		stack_size(t_stack *stack);
 int		args_lenght(int argc, char **argv);
 int		order_of_big(t_stack *stack, int big);
-int	is_sorted(t_stack *a);
+int		is_sorted(t_stack *a);
 char	*multi_join(int argc, char **argv);
 #endif

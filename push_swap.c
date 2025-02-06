@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:53:06 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/01 13:50:44 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:21:13 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(int argc, char **argv)
 	t_stack	*stacka;
 	t_stack	*stackb;
 
-	if (argc < 1)
-		error("too few argument");
+	if (argc <= 1)
+		return (0);
 	stackb = NULL;
 	stacka = parce_and_fill(argc, argv);
 	if (is_sorted(stacka))

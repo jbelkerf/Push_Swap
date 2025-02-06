@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:04:24 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/02/06 12:56:06 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:21:21 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 	char	*str;
 
 	if (argc <= 1)
-		error("too few argms");
+		return (0);
 	stackb = NULL;
 	stacka = parce_and_fill(argc, argv);
 	while (1)
