@@ -6,7 +6,7 @@
 #    By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/30 15:56:44 by codespace         #+#    #+#              #
-#    Updated: 2025/02/02 10:47:56 by jbelkerf         ###   ########.fr        #
+#    Updated: 2025/02/06 12:57:03 by jbelkerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,18 +39,18 @@ M_OBJ=$(M_SRC:.c=.o)
 B_OBJ=$(B_SRC:.c=.o)
 
 all: $(M_OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS)  $(M_OBJ) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS)  $(M_OBJ) $(LIBFT) -o $(NAME)
 
 truth: all bonus counter clean
 
 bonus: $(B_OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS)  $(B_OBJ) $(LIBFT) -o $(NAME_BONUS)
+	$(CC) $(CFLAGS)  $(B_OBJ) $(LIBFT) -o $(NAME_BONUS)
 
 counter: $(C_OBJ) $(LIBFT)
-	@$(CC) $(CFLAGS) $(C_OBJ) $(LIBFT) -o $(NAME_COUNTER)
+	$(CC) $(CFLAGS) $(C_OBJ) $(LIBFT) -o $(NAME_COUNTER)
 
 %.o:%.c header.h
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 $(LIBFT):
 	$(MAKE) -C ./libft
 clean:
@@ -58,6 +58,6 @@ clean:
 	@rm -f $(M_OBJ) $(B_OBJ) $(C_OBJ)
 
 fclean: clean
-	rm -f $(NAME) $(NAME_BONUS) $(NAME_COUNTER)
+	@rm -f $(NAME) $(NAME_BONUS) $(NAME_COUNTER)
 	$(MAKE) fclean -C ./libft
 

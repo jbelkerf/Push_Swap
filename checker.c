@@ -6,12 +6,20 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:04:24 by jbelkerf          #+#    #+#             */
-/*   Updated: 2025/02/02 10:10:18 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/06 12:56:06 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 #include "./gnl/get_next_line.h"
+
+void	free_stacks_and_str(t_stack **a, t_stack **b, char *str)
+{
+	free(str);
+	free_stack(a);
+	free_stack(b);
+	error("bad instraction");
+}
 
 void	do_operation(char *str, t_stack **a, t_stack **b)
 {
@@ -38,12 +46,7 @@ void	do_operation(char *str, t_stack **a, t_stack **b)
 	else if (!ft_strcmp(str, "rrr\n"))
 		rev_rotate_a_and_b(a, b, 0);
 	else
-	{
-		free(str);
-		free_stack(a);
-		free_stack(b);
-		error("bad instraction");
-	}
+		free_stacks_and_str(a, b, str);
 }
 
 int	is_sorted(t_stack *a)

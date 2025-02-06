@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 15:52:49 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/02 15:09:24 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2025/02/06 12:51:59 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ftt_atoi(const char *str, int *err)
 	{
 		n = n * 10 + (*str - '0');
 		if ((n > 2147483647 && sign == 1) || (n > 2147483648 && sign == -1))
-			return(*err= 1, 0);
+			return (*err = 1, 0);
 		str++;
 	}
 	if (*str)
@@ -81,14 +81,10 @@ void	check_duplicated(char **args)
 	{
 		ints[i] = ftt_atoi(args[i], &err);
 		if (err == 1)
-		{
-			free(ints);
-			free_array(args);
-			error("dup 1");
-		}
+			break ;
 		i++;
 	}
-	if (is_dup(ints, i))
+	if (is_dup(ints, i) || err == 1)
 	{
 		free(ints);
 		free_array(args);
