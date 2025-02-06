@@ -40,5 +40,6 @@ int		is_dup(int *tab, int size);
 int		stack_size(t_stack *stack);
 int		args_lenght(int argc, char **argv);
 int		order_of_big(t_stack *stack, int big);
+int	is_sorted(t_stack *a);
 char	*multi_join(int argc, char **argv);
 #endif

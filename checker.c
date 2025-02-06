@@ -49,18 +49,6 @@ void	do_operation(char *str, t_stack **a, t_stack **b)
 		free_stacks_and_str(a, b, str);
 }
 
-int	is_sorted(t_stack *a)
-{
-	set_sorted_index(&a);
-	while (a && a->next)
-	{
-		if (a->sorted_index > a->next->sorted_index)
-			return (0);
-		a = a->next;
-	}
-	return (1);
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*stacka;

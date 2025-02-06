@@ -17,10 +17,12 @@ int	main(int argc, char **argv)
 	t_stack	*stacka;
 	t_stack	*stackb;
 
-	if (argc <= 1)
+	if (argc < 1)
 		error("too few argument");
 	stackb = NULL;
 	stacka = parce_and_fill(argc, argv);
+	if (is_sorted(stacka))
+		return (0);
 	set_sorted_index(&stacka);
 	if (stack_size(stacka) <= 5)
 		tiny_sort(&stacka, &stackb);
